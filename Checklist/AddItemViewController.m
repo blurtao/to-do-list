@@ -45,6 +45,17 @@
 }
 
 - (IBAction)done:(id)sender {
+    NSLog(@"当前文本框输入的文字是:%@",self.textField.text);
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.textField becomeFirstResponder];
 }
 @end
